@@ -14,14 +14,12 @@ build
 /styleguide
 
 
-# wordpress
-
-# themes
+## themes
 /**/images/*
 /**/js/*
 
-!**/assets/
-!**/assets/**
+!/assets/
+!/assets/**
 
 
 # original file
