@@ -1,0 +1,114 @@
+/* #Base
+   -------------------------------------------------------------------------- */
+body, html {
+  @include cnt-font-size($font-nml,16);
+  color: $color-text;
+
+  //height:100%;
+}
+html[lang="ja"] body, html[lang="ja"] button, html[lang="ja"] input, html[lang="ja"] select, html[lang="ja"] textarea{
+  @extend .ex-font-family;
+}
+
+
+body {
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+  font-kerning: normal;
+  background-color: $color-bg;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @extend .ex-font-family;
+  line-height: 1.5;
+}
+
+p {
+  font-size:1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+ul,ol,li,dl,dd,dt{
+  list-style: none;
+  @include margin(null 0);
+  @include padding(null 0);
+}
+
+//ネストされたリストのマージンをリセットします。
+li {
+  > ul, > ol {
+    margin-bottom: 0;
+  }
+}
+
+//`dt`と`dd`の左端を揃えます。
+dd {
+  margin-left: 0;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+a {
+  text-decoration: none;
+  color: $color-link;
+  box-shadow: none;
+  &:hover{
+    color: $color-link;
+    text-decoration: none;
+  }
+  &:visited {
+    color: $color-link;
+  }
+}
+
+//フルードイメージにします。
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+//日本語では斜体を使用しないためリセットします。
+[lang="ja"] {
+  i,
+  cite,
+  em,
+  address,
+  dfn {
+    font-style: normal;
+  }
+}
+
+code,
+pre {
+  font-family: Consolas, Menlo, Courier, monospace;
+}
+
+//h1, h2, h3, h4, h5, h6,
+ul, ol, dl,
+blockquote, p, address,
+hr,
+table,
+fieldset, figure,
+pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+label{
+  font-weight:normal;
+}
+[src$=".svg"], [data$=".svg"]{
+  width:auto;
+}
+figure{
+  margin: 0;
+  box-sizing: border-box;
+  max-width: 100%;
+}

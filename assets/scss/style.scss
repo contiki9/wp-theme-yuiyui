@@ -1,0 +1,269 @@
+@charset "utf-8";
+/*
+Template: twentyseventeen
+Theme Name: yuiyui
+Theme URI: https://github.com/contiki9/wp-theme-yuiyui
+Description:  themes
+Author: conti
+Author URI: http://cntlog.net/
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: White, fluid-layout, Responsive-Layout,one-column, two-columns, right-sidebar, flexible-header,
+Version: 0.1
+*/
+/*---------------------------------------------------------------------
+# assets
+-----------------------------------------------------------------------*/
+/* mixIn
+   ---------------------------------------------------------- */
+@import "assets/vendor/bourbon/bourbon";
+@import "assets/vendor/neat/neat";
+//@import "assets/vendor/dlex/dlex";
+@import "assets/vendor/dlex/mixin";
+@import "assets/mixin";
+/* Framework
+   ---------------------------------------------------------- */
+//@import "assets/vendor/skeleton/skeleton";
+/* Base
+   ---------------------------------------------------------- */
+@import "variable";
+@import "mixin";
+@import "extend";
+/* ==========================================================================
+   Foundation
+   ========================================================================== */
+@import "include/foundation";
+
+////////////////////////
+//common
+///////////////////////
+
+.entry-content a:focus, .entry-content a:hover, .entry-summary a:focus, .entry-summary a:hover, .widget a:focus, .widget a:hover, .site-footer .widget-area a:focus, .site-footer .widget-area a:hover, .posts-navigation a:focus, .posts-navigation a:hover, .comment-metadata a:focus, .comment-metadata a:hover, .comment-metadata a.comment-edit-link:focus, .comment-metadata a.comment-edit-link:hover, .comment-reply-link:focus, .comment-reply-link:hover, .widget_authors a:focus strong, .widget_authors a:hover strong, .entry-title a:focus, .entry-title a:hover, .entry-meta a:focus, .entry-meta a:hover, .page-links a:focus .page-number, .page-links a:hover .page-number, .entry-footer a:focus, .entry-footer a:hover, .entry-footer .cat-links a:focus, .entry-footer .cat-links a:hover, .entry-footer .tags-links a:focus, .entry-footer .tags-links a:hover, .post-navigation a:focus, .post-navigation a:hover, .pagination a:not(.prev):not(.next):focus, .pagination a:not(.prev):not(.next):hover, .comments-pagination a:not(.prev):not(.next):focus, .comments-pagination a:not(.prev):not(.next):hover, .logged-in-as a:focus, .logged-in-as a:hover, a:focus .nav-title, a:hover .nav-title, .edit-link a:focus, .edit-link a:hover, .site-info a:focus, .site-info a:hover, .widget .widget-title a:focus, .widget .widget-title a:hover, .widget ul li a:focus, .widget ul li a:hover {
+  @include cnt-link($color-link);
+  box-shadow: inset 0 0 0 $color-link, 0 3px 0 $color-link;
+}
+
+////////////////////////
+//layout
+////////////////////////
+.wrap {
+  max-width: 1200px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.has-sidebar:not(.error404) #primary {
+
+  @media screen and (min-width: 48em) {
+    width: calc(100% - 330px);
+  }
+}
+
+#secondary {
+  @media screen and (min-width: 48em) {
+    max-width: 250px;
+  }
+}
+
+//contents
+////////////////////
+.site-content-contain {
+  background: $color-bg;
+  .site-content {
+    padding-top: 0;
+  }
+  .wrap {
+    padding-top: 60px;
+    background: #FFF;
+  }
+}
+
+.blog .site-main > article, .archive .site-main > article, .search .site-main > article {
+  margin-bottom:4em;
+  border-bottom:2px solid $color-text;
+  @media screen and (min-width: 48em) {
+    margin-bottom:4em;
+
+  }
+}
+
+.single, .pages {
+  .wrap {
+    @include cnt-max-container-center(960px);
+  }
+  #primary.content-area {
+    @include cnt-max-container-center(800px);
+    width: 100%;
+    float: none;
+  }
+
+  #secondary.widget-area {
+    .widget {
+      ul li {
+        a {
+          @include padding(0 null);
+          display: block;
+          transition: .5s all;
+          &:hover {
+            @include padding(15px null);
+            transition: .5s all;
+            box-shadow: none;
+          }
+        }
+
+      }
+    }
+
+    @include cnt-max-container-center(800px);
+    width: 100%;
+    float: none;
+    .widget-title {
+      font-size: 1rem;
+    }
+    .widget_categories, .widget_archive {
+      li {
+        @include cnt-radius(4px);
+        padding: 0;
+        display: inline-block;
+        margin-right: 1em;
+        margin-bottom: 1em;
+        border: 1px solid #ddd;
+        a {
+          @include padding(.5em 1em);
+          display: inline-block;
+          color: #DDD;
+          &:hover {
+            color: $color-link;
+            box-shadow: none;
+          }
+        }
+        &:hover {
+          border: 1px solid $color-link;
+        }
+      }
+    }
+  }
+}
+
+//nav
+////////////////////
+.navigation {
+  padding-left: 2em;
+  padding-right: 2rem;
+
+  .nav-links {
+    position: relative;
+  }
+  .nav-previous, .nav-next {
+    float: none;
+    width: 100%;
+    margin-bottom: 1.5em;
+
+    a {
+      @extend .ex-btn-border;
+      display: block;
+      text-align: center;
+      &:after, &:before {
+        content: '';
+      }
+      &:hover {
+        position: relative;
+        top: 3px;
+      }
+      .nav-title {
+        display: inline-block;
+        margin-bottom: 25px;
+      }
+    }
+  }
+  .nav-previous {
+
+    .nav-title-icon-wrapper {
+
+    }
+
+  }
+  .nav-next {
+
+    .nav-title-icon-wrapper {
+
+    }
+
+  }
+}
+
+/////////////////////////
+// header
+/////////////////////////
+.single, .pages {
+
+  .site-branding {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: rgba(0, 0, 0, .6);
+    .site-branding-text {
+      @include flx-row;
+      @include flx-middle;
+      .site-title {
+        margin-right: 1em;
+      }
+    }
+    .site-description{
+      font-size:.75em;
+    }
+  }
+
+}
+
+.single-featured-image-header {
+  position: relative;
+  //height: 150px;
+  @media screen and (min-width: 48em) {
+    height: 300px;
+  }
+  img {
+    @media screen and (min-width: 48em) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: 100%;
+    }
+  }
+}
+
+/////////////////////////
+// entry-content
+/////////////////////////
+.entry-content {
+  a {
+    @include cnt-link($color-link);
+    &:hover {
+      color: #FFF;
+      box-shadow: none;
+    }
+  }
+
+  a.more-link {
+    @extend .ex-btn-border;
+    @include flx-row;
+    @include flx-center;
+    box-shadow: none;
+    padding: 1.5em 1em;
+    text-align: center;
+    margin: 15px auto;
+    &:hover {
+      top: 3px;
+    }
+    @media screen and (min-width: 48em) {
+      width: 30%;
+    }
+  }
+
+  @import "include/blog";
+}
+
+
+

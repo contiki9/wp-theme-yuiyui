@@ -1,0 +1,32 @@
+*~
+*.bak
+*.org
+Thumbs.db
+desktop.ini
+.DS_Store
+.buildpath
+.project
+.settings
+*.tmproj
+build
+.idea
+/node_modules
+/styleguide
+
+
+# wordpress
+
+# themes
+/**/images/*
+/**/js/*
+
+!**/assets/
+!**/assets/**
+
+
+# original file
+
+!gulpfile.js
+!README.md
+!package.json
+!/aigis
