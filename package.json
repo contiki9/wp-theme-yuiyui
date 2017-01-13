@@ -1,5 +1,5 @@
 {
-  "name": "wordpress theme",
+  "name": "wordpress-theme",
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
+  "license": "GPLv2",
   "devDependencies": {
     "browser-sync": "^2.18.5",
     "del": "^2.2.2",
