@@ -17,6 +17,7 @@ build
 ## themes
 /**/images/*
 /**/js/*
+/**/fonts/*
 /style.css
 
 !/assets/
