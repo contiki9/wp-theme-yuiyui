@@ -28,14 +28,14 @@ var del = require('del');
 
 //開発用ディレクトリ
 var develop = {
-    'root': './assets/',
-}
+    'root': './assets/'
+};
 
 //コンパイル先
 var release = {
     'root': './',
-    'sass': './',
-}
+    'sass': './'
+};
 
 var AUTOPREFIXER_BROWSERS = [
     // @see https://github.com/ai/browserslist#browsers
@@ -192,7 +192,3 @@ gulp.task('sync', ['browser-sync'], function () {
     gulp.watch('./**/*.html', ['bs-reload']);
     gulp.watch( './**/*.php', ['bs-reload'] );
 });
-
-
-
-
