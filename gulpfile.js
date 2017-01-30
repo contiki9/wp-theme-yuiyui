@@ -133,7 +133,7 @@ gulp.task('aigis', function() {
 ////////////////////////////////////////////////
 // スタイルガイドディレクトリを削除
 ////////////////////////////////////////////////
-gulp.task('clean-styleguide', function (cb) {
+gulp.task('clean-styleguide', function () {
     console.log('--------- clean-styleguide task ----------');
     return del('./styleguide/' + '**/*');
 });
