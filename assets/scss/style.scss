@@ -48,8 +48,8 @@ Version: 0.1
 ////////////////////////
 .wrap {
   max-width: 1200px;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .has-sidebar:not(.error404) #primary {
@@ -67,8 +67,17 @@ Version: 0.1
 
 //contents
 ////////////////////
+.site-header {
+  .site-branding {
+    padding-top: 3em !important;
+    background: linear-gradient(-135deg, rgba(#43e97b,.6), #38f9d7);
+    color: $color-text;
+  }
+}
+
 .site-content-contain {
-  background: $color-bg;
+  //background: $color-bg;
+  background: linear-gradient( #e2d1c3,#fdfcfb);
   .site-content {
     padding-top: 0;
   }
@@ -79,10 +88,10 @@ Version: 0.1
 }
 
 .blog .site-main > article, .archive .site-main > article, .search .site-main > article {
-  margin-bottom:4em;
-  border-bottom:2px solid $color-text;
+  margin-bottom: 4em;
+  border-bottom: 2px solid $color-text;
   @media screen and (min-width: 48em) {
-    margin-bottom:4em;
+    margin-bottom: 4em;
 
   }
 }
@@ -208,8 +217,21 @@ Version: 0.1
         margin-right: 1em;
       }
     }
-    .site-description{
-      font-size:.75em;
+    .site-description {
+      font-size: .75em;
+    }
+  }
+
+  header.entry-header {
+    text-align: center;
+    &:after {
+      content: '';
+      height: 4px;
+      width: 20%;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      display: inline-block;
+      background: $color-text;
     }
   }
 
@@ -265,5 +287,31 @@ Version: 0.1
   @import "include/blog";
 }
 
+/////////////////////////
+// footer
+/////////////////////////
 
-
+.site-footer {
+  background: #333;
+  .wrap {
+    background: #333;
+    margin-top: 1em;
+    padding-top: 0;
+    text-align: center;
+    color: #FFF;
+    h2.widget-title {
+      color: #FFF;
+    }
+    a {
+      display: block;
+      color: #CCC;
+      box-shadow: none;
+    }
+  }
+  .site-info {
+    float: none;
+    padding: 0;
+    margin-bottom: 0;
+    width: 100%;
+  }
+}
